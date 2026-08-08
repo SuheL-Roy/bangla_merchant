@@ -54,7 +54,7 @@ const DashboardProcessingTable = () => {
         }
 
         const response = await fetch(
-          'https://system.banglaoneexpress.com/api/dashboard-button-list',
+          'https://bangla1consumer.com/api/dashboard-button-list',
           {
             headers: {
               Authorization: `Bearer ${token}`,

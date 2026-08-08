@@ -37,7 +37,7 @@ const DeliveryForm = ({ active }) => {
     const fetchDistricts = async () => {
       try {
         const res = await fetch(
-          'https://system.banglaoneexpress.com/api/distList'
+          'https://bangla1consumer.com/api/distList'
         );
         const data = await res.json();
         if (data.Status) {
@@ -62,7 +62,7 @@ const DeliveryForm = ({ active }) => {
 
       try {
         const res = await fetch(
-          `https://system.banglaoneexpress.com/api/dist-area?id=${formData.districtId}`,
+          `https://bangla1consumer.com/api/dist-area?id=${formData.districtId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -198,7 +198,7 @@ const DeliveryForm = ({ active }) => {
       };
 
       const res = await fetch(
-        'https://system.banglaoneexpress.com/api/orderstor',
+        'https://bangla1consumer.com/api/orderstor',
         {
           method: 'POST',
           headers: {

@@ -25,7 +25,7 @@ const PaymentDetailsPage = () => {
         const token = stored ? JSON.parse(stored).token : null;
 
         const res = await fetch(
-          `https://system.banglaoneexpress.com/api/payment-history-details-merchant?invoice_id=${invoiceId}`,
+          `https://bangla1consumer.com/api/payment-history-details-merchant?invoice_id=${invoiceId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

@@ -18,7 +18,7 @@ const TrackParcel = () => {
       const token = stored ? JSON.parse(stored).token : null;
 
       const res = await fetch(
-        `https://system.banglaoneexpress.com/api/order-view?tracking_id=${encodeURIComponent(
+        `https://bangla1consumer.com/api/order-view?tracking_id=${encodeURIComponent(
           query
         )}`,
         { headers: { Authorization: `Bearer ${token}` } }

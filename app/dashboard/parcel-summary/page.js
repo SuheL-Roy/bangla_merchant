@@ -32,7 +32,7 @@ const Page = () => {
       if (!token) return;
 
       const res = await fetch(
-        `https://system.banglaoneexpress.com/api/order-summary?FormDate=${formDate}&toDate=${toDate}`,
+        `https://bangla1consumer.com/api/order-summary?FormDate=${formDate}&toDate=${toDate}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -36,7 +36,7 @@ const SupportModal = ({ isOpen, onClose, trackingId }) => {
       formData.append('message', message);
 
       const res = await fetch(
-        'https://system.banglaoneexpress.com/api/create-support-ticket',
+        'https://bangla1consumer.com/api/create-support-ticket',
         {
           method: 'POST',
           headers: {

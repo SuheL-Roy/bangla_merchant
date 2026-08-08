@@ -19,7 +19,7 @@ export default function PaymentDetails() {
         if (!token) throw new Error('No token found');
 
         const res = await fetch(
-          'https://system.banglaoneexpress.com/api/payment-details',
+          'https://bangla1consumer.com/api/payment-details',
           {
             headers: {
               Authorization: `Bearer ${token}`,

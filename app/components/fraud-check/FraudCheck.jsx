@@ -27,7 +27,7 @@ const FraudCheck = () => {
 
     try {
       const response = await fetch(
-        `https://system.banglaoneexpress.com/api/fraud-customer-check?number=${phone}`
+        `https://bangla1consumer.com/api/fraud-customer-check?number=${phone}`
       );
 
       if (!response.ok) {

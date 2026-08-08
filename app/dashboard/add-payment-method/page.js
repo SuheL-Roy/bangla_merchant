@@ -122,7 +122,7 @@ const PaymentPage = () => {
       const stored = localStorage.getItem('token');
       const token = stored ? JSON.parse(stored).token : null;
       const response = await axios.post(
-        'https://system.banglaoneexpress.com/api/payment-info-add',
+        'https://bangla1consumer.com/api/payment-info-add',
         data,
         {
           headers: {
@@ -164,7 +164,7 @@ const PaymentPage = () => {
         const token = stored ? JSON.parse(stored).token : null;
 
         const response = await fetch(
-          'https://system.banglaoneexpress.com/api/payment-info-show',
+          'https://bangla1consumer.com/api/payment-info-show',
           {
             method: 'GET',
             headers: {
@@ -196,7 +196,7 @@ const PaymentPage = () => {
         const token = stored ? JSON.parse(stored).token : null;
 
         const response = await fetch(
-          'https://system.banglaoneexpress.com/api/restriction-payment',
+          'https://bangla1consumer.com/api/restriction-payment',
           {
             method: 'GET',
             headers: {

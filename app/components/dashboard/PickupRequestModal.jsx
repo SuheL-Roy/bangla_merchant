@@ -38,7 +38,7 @@ const PickupRequestModal = ({ isOpen, onClose }) => {
 
       // Send request
       const response = await axios.post(
-        'https://system.banglaoneexpress.com/api/pick-up-request',
+        'https://bangla1consumer.com/api/pick-up-request',
         formData,
         {
           headers: {

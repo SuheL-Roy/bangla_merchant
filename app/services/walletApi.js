@@ -2,7 +2,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
-const API_BASE_URL = 'https://system.banglaoneexpress.com/api';
+const API_BASE_URL = 'https://bangla1consumer.com/api';
 
 /**
  * Get auth token from localStorage

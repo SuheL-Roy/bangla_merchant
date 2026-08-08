@@ -82,7 +82,7 @@ const EditProfileModal = ({
       const token = stored ? JSON.parse(stored).token : null;
 
       const response = await axios.post(
-        'https://system.banglaoneexpress.com/api/merchant-profile-updated',
+        'https://bangla1consumer.com/api/merchant-profile-updated',
         formData,
         {
           headers: {

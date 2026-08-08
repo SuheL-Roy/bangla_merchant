@@ -25,7 +25,7 @@ const PaymentRequestModal = ({ isOpen, onClose }) => {
         }
 
         const res = await fetch(
-          'https://system.banglaoneexpress.com/api/merchantdashboard',
+          'https://bangla1consumer.com/api/merchantdashboard',
           {
             method: 'GET',
             headers: {
@@ -63,7 +63,7 @@ const PaymentRequestModal = ({ isOpen, onClose }) => {
       const token = stored ? JSON.parse(stored).token : null;
 
       const response = await axios.post(
-        'https://system.banglaoneexpress.com/api/payment-request',
+        'https://bangla1consumer.com/api/payment-request',
         formData,
         {
           headers: {

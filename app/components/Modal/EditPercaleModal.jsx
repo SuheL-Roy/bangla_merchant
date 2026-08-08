@@ -38,7 +38,7 @@ const EditPercaleModal = ({ order, onClose }) => {
       if (!token) return;
 
       const res = await fetch(
-        'https://system.banglaoneexpress.com/api/parcel-update',
+        'https://bangla1consumer.com/api/parcel-update',
         {
           method: 'POST',
           headers: {

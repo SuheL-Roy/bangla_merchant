@@ -72,7 +72,7 @@ const Card = () => {
 
         // Use the new fetch utility with better error handling
         const data = await get(
-          'https://system.banglaoneexpress.com/api/dashboard-button-list',
+          'https://bangla1consumer.com/api/dashboard-button-list',
           {
             timeout: 15000, // 15 seconds timeout for this endpoint
             retries: 2,

@@ -300,7 +300,7 @@ const TrackingParcel = () => {
       const token = stored ? JSON.parse(stored).token : null;
 
       const res = await fetch(
-        `https://system.banglaoneexpress.com/api/order-search?name=${encodeURIComponent(
+        `https://bangla1consumer.com/api/order-search?name=${encodeURIComponent(
           query
         )}`,
         {

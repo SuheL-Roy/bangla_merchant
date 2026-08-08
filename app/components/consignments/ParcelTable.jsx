@@ -160,7 +160,7 @@ const ParcelTable = () => {
         if (!token) return;
 
         const response = await fetch(
-          `https://system.banglaoneexpress.com/api/order-delivered`,
+          `https://bangla1consumer.com/api/order-delivered`,
           { method: 'GET', headers: { Authorization: `Bearer ${token}` } },
         );
 
