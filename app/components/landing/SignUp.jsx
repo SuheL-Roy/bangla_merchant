@@ -88,60 +88,55 @@ const SignUp = () => {
       const data = await res.json();
       console.log(data);
 
-      const isSuccess = data.message === 'Inactive account' || 
-                        (typeof data.message === 'string' && data.message.includes('Registration successful'));
+      // NOTE: your API does NOT always return `message`.
+      // On success it returns: { success: true, token, user: {...} }
+      // On failure (validation etc.) it usually returns: { message: "..." } or { message: {...} }
+      // So we check `data.success` FIRST, then fall back to the message-based checks
+      // for other success shapes (e.g. "Inactive account" pending-approval case).
+      const isSuccess =
+        data.success === true ||
+        data.message === 'Inactive account' ||
+        (typeof data.message === 'string' &&
+          data.message.includes('Registration successful'));
 
       if (isSuccess) {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: data.message || `Thank You! Your Merchant Account Registration is successful. We will manually Check and Activate your account within 24 hours.`,
+          title:
+            (typeof data.message === 'string' && data.message) ||
+            `Thank You! Your Merchant Account Registration is successful. We will manually Check and Activate your account within 24 hours.`,
           showConfirmButton: false,
           timer: 4500,
         });
 
+        setFormData({
+          name: '',
+          business_name: '',
+          address: '',
+          email: '',
+          mobile: '',
+          reference: '',
+          area: '',
+          district: '',
+          password: '',
+        });
+        setAreas([]);
+
         router.push('/');
       } else {
-        if (typeof data.message === 'object') {
+        if (data.message && typeof data.message === 'object') {
           const firstError = Object.values(data.message).flat()[0];
           toast.error(firstError || 'Registration failed');
         } else {
-          toast.error(data.message || 'Registration failed');
+          toast.error(
+            (typeof data.message === 'string' && data.message) ||
+              'Registration failed'
+          );
         }
       }
-
-      // if (res.ok && data.success) {
-      //   toast.success(' Registration successful: ');
-
-      //   setFormData({
-      //     name: '',
-      //     business_name: '',
-      //     address: '',
-      //     email: '',
-      //     mobile: '',
-      //     area: '',
-      //     district: '',
-      //     password: '',
-      //   });
-
-      //   setAreas([]);
-      // } else {
-      //   const extractErrorMessages = obj => {
-      //     if (!obj || typeof obj !== 'object') return 'Unknown error';
-      //     const messages = Object.values(obj).flat();
-      //     return messages.join(', ');
-      //   };
-      //   // const errorMessage = extractErrorMessages(data.message);
-
-      //   console.log(data.message);
-      //   console.log(errorMessage);
-
-      //   // toast.error('' + (errorMessage || 'Unauthorized or invalid request'));
-      //   toast.error('' + data.message);
-      // }
     } catch (error) {
-      toast.success(' Something went wrong: ' + error.message);
-      // toast.success(' Something went wrong: ');
+      toast.error('Something went wrong: ' + error.message);
     }
   };
 
