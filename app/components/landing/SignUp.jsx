@@ -46,7 +46,7 @@ const SignUp = () => {
     const fetchAreas = async () => {
       if (formData.district) {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_MERCHANT_API_KEY}/dist-area?id=${formData.district}`
+          `${process.env.NEXT_PUBLIC_MERCHANT_API_KEY}/district-area?id=${formData.district}`
         );
         const data = await res.json();
         if (data.Status) {
